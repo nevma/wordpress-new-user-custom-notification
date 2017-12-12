@@ -2,15 +2,15 @@
 
     /*
         Plugin Name:       WordPress new user custom notification
-        Plugin URI:        https://github.com/nevma/wordpress-new-user-custom-botification
+        Plugin URI:        https://github.com/nevma/wordpress-new-user-custom-notification
         Description:       Sends custom notification emails to new WordPress users.
-        Version:           0.9.3
+        Version:           0.1.0
         Author:            Nevma
         Author URI:        https://nevma.gr/
         License:           GPL-2.0+
         License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
-        Text Domain:       wordpress-new-user-custom-botification
-        GitHub Plugin URI: https://github.com/nevma/wordpress-new-user-custom-botification
+        Text Domain:       wordpress-new-user-custom-notification
+        GitHub Plugin URI: https://github.com/nevma/wordpress-new-user-custom-notification
     */
 
 
@@ -43,13 +43,14 @@
 
 
 
-/**
- * Predefine the wp_new_user_notification function.
- */
+    /**
+     * Predefine the wp_new_user_notification function.
+     */
 
     if ( ! function_exists( 'wp_new_user_notification' ) ) {
 
         function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) {
+
             if ( $deprecated !== null ) {
                 _deprecated_argument( __FUNCTION__, '4.3.1' );
             }
@@ -132,7 +133,7 @@
 
             /* translators: %s: user login */
             $message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
-            $message .= __('To set your password, visit the following address:') . "\r\n\r\n";
+            $message .= __('TEST &mdash; To set your password, visit the following address:') . "\r\n\r\n";
             $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . ">\r\n\r\n";
 
             $message .= wp_login_url() . "\r\n";
