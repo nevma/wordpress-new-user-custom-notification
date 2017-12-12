@@ -1,7 +1,7 @@
 <?php
 
     /*
-        Plugin Name:       WordPress new user custom notification
+        Plugin Name:       New user custom notification
         Plugin URI:        https://github.com/nevma/wordpress-new-user-custom-notification
         Description:       Sends custom notification emails to new WordPress users.
         Version:           0.1.0
